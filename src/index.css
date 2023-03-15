@@ -1,0 +1,600 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+#greeting {
+  margin-top: 80px;
+  font-weight: normal;
+  padding-bottom: 35px;
+  font-size: 34px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+#dateTime {
+  display: inline;
+  font-weight: bolder;
+  font-size: 44px;
+}
+
+#searchForm {
+  text-align: center;
+  margin: 0;
+}
+
+#searchBox {
+  background-color: white;
+  border: none;
+  border-radius: 22px;
+  width: 330px;
+  padding: 14px;
+  margin: 10px;
+  margin-bottom: 25px;
+  color: black;
+  font-size: 15px;
+
+  box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+
+  /* This is for the search logo */
+  padding-left: 40px;
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: 10px 0.7rem;
+  background-image: url("../icons/googleLogo.png");
+}
+
+#searchButton,
+#openSearch {
+  padding: 8px;
+  margin: 8px;
+  background-color: #f8f9fa;
+  border: solid 1px #f0f1f1;
+  border-radius: 4px;
+  color: #3c4043;
+  padding-left: 12px;
+  padding-right: 12px;
+  cursor: pointer;
+}
+
+#weatherInfo {
+  margin-left: 25px;
+  margin-top: 20px;
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+#setbg {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+#temp {
+  font-size: 32px;
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  margin: none;
+  border: none;
+  padding: none;
+}
+
+.custom-btn {
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.btn-light {
+  border: none;
+  color: #000;
+}
+
+.btn-light:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+select option {
+  background-color: green;
+}
+.btn-light:hover {
+  color: #000;
+}
+
+.btn-light:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-light:active {
+  top: 2px;
+}
+
+body {
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+p {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.modalShown {
+  display: block !important;
+}
+
+#settings_changesearch {
+  color: rgb(104, 104, 104);
+}
+
+#open-btn {
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  position: fixed;
+  top: 92%;
+  cursor: pointer;
+}
+
+#settingsIcon {
+  width: 20px;
+}
+
+#modal-background {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#modal {
+  background-color: #fff;
+  color: rgb(34, 34, 34);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  font-size: 1.5rem;
+  animation-name: animatemodal;
+  animation-duration: 0.4s;
+}
+
+hr {
+  border-bottom: 1px solid #3c4043;
+  width: 80%;
+}
+
+#close-btn {
+  align-self: flex-end;
+}
+
+#close-btn:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+#settingsTitle {
+  padding-bottom: 40px;
+  margin: 0;
+  color: #333;
+}
+
+.settingsSubtitles {
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+#searchEngineLogo {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes animatemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+#bookmarks {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+}
+
+#ntp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  outline: none;
+}
+
+.text {
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.icon {
+  display: inline-block;
+  background-color: #00000060;
+  border-radius: 50%;
+  margin: 0.5rem;
+  transition: background-color ease 0.15s;
+}
+
+.icon img {
+  padding: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.item,
+.edit {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  width: 100px;
+  margin: 1rem;
+  outline: none;
+  text-shadow: 1px 1px 1px rgb(40, 40, 40);
+  transition: ease-in-out 0.25s background-color;
+}
+
+.hover .icon,
+.edit:hover .icon {
+  cursor: pointer;
+  background-color: #00000080;
+}
+
+.showInfo .moveHandler {
+  z-index: 1;
+  opacity: 1;
+}
+
+label {
+  display: block;
+  width: 54px;
+  height: 32px;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  background-color: #e6e9ec;
+}
+
+input#toggleBookmarks {
+  display: none;
+}
+
+i {
+  height: 28px;
+  width: 28px;
+  background: #ffffff;
+  display: inline-block;
+  border-radius: 100px;
+  margin-top: 2px;
+  margin-left: 2px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+label:hover > i {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+input:checked + label > i {
+  margin-left: 24px;
+}
+
+label:active {
+  background-color: #a6b9cb;
+}
+
+label:active > i {
+  width: 34px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + label:active > i {
+  margin-left: 18px;
+}
+
+input:checked + label {
+  background-color: #008fff;
+}
+
+#about {
+  margin-top: 25px;
+}
+
+#aboutText {
+  font-size: 18px;
+}
+
+.smallText {
+  font-size: 24px;
+}
+
+/* Стили всплывающего окна по-умолчанию */
+.modal {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* фон */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 200ms ease-in;
+  -moz-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+/* При отображении модального окно */
+.modal:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; /* отображение окна по центру */
+  }
+}
+/* Стили для блока с контентом окна */
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+@media (min-width: 768px) {
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+/* Стили заголовка окна */
+.modal-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #eceeef;
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+/* Стили кнопки "х" ("Закрыть")  */
+.close {
+  float: right;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  text-decoration: none;
+}
+/* Стили для закрывающей кнопки в фокусе или наведении */
+.close:focus,
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+/* Стили блока основного содержимого окна */
+.modal-body {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+}
+
+.modal-body button {
+  padding: 0;
+  margin: 7px;
+}
+
+.modal-body button img {
+  width: 100px;
+  height: 100px;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  cursor: pointer;
+}
+.banner {
+  display: block;
+  text-align: center;
+  margin-right: 500px;
+}
+.round {
+  border-radius: 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  display: flex;
+  text-align: center;
+  grid-row: 2;
+  grid-column: 2;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#mainContent {
+  grid-row: 1;
+  grid-column: 2;
+}
+.text4rekl {
+  display: flex;
+  text-align: center;
+  grid-row: 1;
+  grid-column: 3;
+  align-items: flex-end;
+  justify-content: flex-start;
+  color: #ffdf78;
+  margin-right: 150px;
+  font-size: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+}
+#weather {
+  margin-left: 25px;
+  margin-top: 20px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.block {
+  /* height: 10px;
+  width: 150px;
+  margin: 0 0; */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.block p {
+  font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal,
+    Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+  font-size: 80px;
+  text-align: center;
+  color: red;
+  text-transform: uppercase;
+  padding-top: 35px;
+  animation: text 9s infinite linear;
+  padding-left: 100%;
+  white-space: nowrap;
+}
+@keyframes text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

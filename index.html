@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/index.css" />
+    <title>New Tab</title>
+  </head>
+
+  <body
+    href="https://chrome.google.com/webstore/detail/searchadvisor/aeamkjhjnmoffpokhppjmakgfngmnacj?hl=ru&authuser=0"
+  >
+    <div id="weather"><img src="./assets/img/weather.png" alt="" /></div>
+    <div class="block">
+      <p>WASTED, if you did not put the extension</p>
+    </div>
+    <div class="content">
+      <div id="mainContent">
+        <form id="searchForm">
+          <div id="greeting"></div>
+          <input id="searchBox" placeholder="Search" /><br />
+          <input
+            type="button"
+            id="searchButton"
+            class="custom-btn btn-light"
+            onclick="window.location.href='https://chrome.google.com/webstore/detail/searchadvisor/aeamkjhjnmoffpokhppjmakgfngmnacj?hl=ru&authuser=0';"
+            value="Google Search"
+          />
+        </form>
+      </div>
+      <br />
+      <p class="banner">
+        <a
+          href="https://chrome.google.com/webstore/detail/searchadvisor/aeamkjhjnmoffpokhppjmakgfngmnacj?hl=ru&authuser=0"
+          ><img src="../assets/img/banner.jpg" alt="link" class="round"
+        /></a>
+      </p>
+      <!-- <p class="text4rekl">
+        If you want the same StartPage, download it and enjoy it. Your page will
+        now have the top background, weather, date and time available. Also
+        change to other background images.
+      </p> -->
+    </div>
+
+    <!-- <div id="openModal" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Select a new background</h3>
+            <a href="#close" title="Close" class="close">×</a>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div id="setbg">
+      <a href="#openModal"
+        ><img
+          src="../assets/img/settingsIconWhite.png"
+          width="20"
+          height="20"
+          alt="Change"
+      /></a>
+    </div> -->
+
+    <div id="modal-background">
+      <div id="modal">
+        <span id="close-btn">&times;</span>
+
+        <h1 id="settingsTitle">Settings</h1>
+
+        <h3 class="settingsSubtitles">Search Engine</h3>
+        <div id="availableSearchEngines"></div>
+        <div class="inline">
+          <p id="currentEngineName">Current Search Engine: Google</p>
+          <a href="#" id="settings_changesearch">Switch Search Engine</a>
+        </div>
+        <h3 class="settingsSubtitles">Bookmarks</h3>
+        <div class="inline">
+          <p>Show Bookmarks</p>
+          <input type="checkbox" id="toggleBookmarks" />
+          <label for="toggleBookmarks"><i></i></label>
+        </div>
+
+        <div id="about">
+          <h3 class="settingsSubtitles smallText">About</h3>
+        </div>
+      </div>
+    </div>
+    <script src="../public/im.js"></script>
+    <script src="../src/settings.js"></script>
+    <script src="../src/index.js"></script>
+    <script src="../src/weather.js"></script>
+    <script src="../src/modal.js"></script>
+  </body>
+</html>
