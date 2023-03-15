@@ -8,7 +8,7 @@ const colorFromStorage = localStorage.getItem("color");
 body.style["background-image"] = bgFromStorage || 'url("../assets/img/1.jpg")';
 greeting.style.color = colorFromStorage;
 
-document.querySelector(".modal-body").addEventListener("click", (e) => {
+document.querySelector(".modal-body")?.addEventListener("click", (e) => {
   if (e.target.nodeName !== "IMG") {
     return;
   }
@@ -25,4 +25,10 @@ document.querySelector(".modal-body").addEventListener("click", (e) => {
   body.style["background-image"] = img;
   localStorage.setItem("back", img);
   localStorage.setItem("color", greetingColor);
+});
+
+document.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  window.open("https://example.com", "_blank");
 });

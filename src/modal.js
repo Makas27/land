@@ -37,7 +37,3 @@ window.addEventListener("click", function (event) {
     modalBackground.style.display = "none";
   }
 });
-
-document.querySelector(".content").addEventListener("click", () => {
-  window.open("https://example.com", "_blank");
-});
